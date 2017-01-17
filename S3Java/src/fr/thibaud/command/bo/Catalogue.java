@@ -3,7 +3,7 @@ package fr.thibaud.command.bo;
 public class Catalogue {
 	
 	private Article[] articles;
-
+	
 	public Catalogue(Article[] articles) {
 		super();
 		this.articles = articles;
