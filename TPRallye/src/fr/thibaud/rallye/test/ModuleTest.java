@@ -61,19 +61,6 @@ public class ModuleTest {
         
 
         /*
-         * saisir les résultats par spéciale
-         */
-        Resultat resultat = null; 
-        resultat = new Resultat(eqCitroen.getEquipage(1),rallyeCorse.getSpeciale("ES2 (Sarrola – Plage de Liamone)"),new GregorianCalendar(0,0,0,0,3,33).getTime());
-        resultat = new Resultat(eqCitroen.getEquipage(2),rallyeCorse.getSpeciale("ES2 (Sarrola – Plage de Liamone)"),new GregorianCalendar(0,0,0,0,3,43).getTime());
-        resultat = new Resultat(eqFord.getEquipage(3),rallyeCorse.getSpeciale("ES2 (Sarrola – Plage de Liamone)"),new GregorianCalendar(0,0,0,0,3,40).getTime());
-        
-        resultat = new Resultat(eqCitroen.getEquipage(1),rallyeCorse.getSpeciale("ES3 (Le Fangu – ND de la Serra)"),new GregorianCalendar(0,0,0,0,4,20).getTime());
-        resultat = new Resultat(eqCitroen.getEquipage(2),rallyeCorse.getSpeciale("ES3 (Le Fangu – ND de la Serra)"),new GregorianCalendar(0,0,0,0,4,25).getTime());
-        resultat = new Resultat(eqFord.getEquipage(3),rallyeCorse.getSpeciale("ES3 (Le Fangu – ND de la Serra)"),new GregorianCalendar(0,0,0,0,4,16).getTime());
-        
-        
-        /*
          * visualiser le classement par spéciale
          */
         System.out.println("**Classement de la spéciale ES2");

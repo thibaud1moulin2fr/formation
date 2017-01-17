@@ -128,6 +128,7 @@ public class TestsAssociation {
 		System.out.println("Appuyez sur entrée pour sortir du test...");
 		Scanner sc = new Scanner(System.in);
 		sc.nextLine();
+		sc.close();
 	}
 	
 	
