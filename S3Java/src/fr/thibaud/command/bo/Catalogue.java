@@ -1,5 +1,4 @@
 package fr.thibaud.command.bo;
-import java.util.Arrays;
 
 public class Catalogue {
 	
@@ -15,6 +14,12 @@ public class Catalogue {
 	
 	@Override
 	public String toString() {
-		return "Catalogue [articles=" + Arrays.toString(articles) + "]";
+		StringBuilder listeArticles = new StringBuilder(), tmp = null;
+		for (Article a : articles) if (a != null) {
+			tmp = new StringBuilder();
+			tmp.append(a.toString()); tmp.append("\n");
+			listeArticles.append(tmp);
+		}
+		return "Catalogue [articles=\n" + listeArticles + "]";
 	}
 }

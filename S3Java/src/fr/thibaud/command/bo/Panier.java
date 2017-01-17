@@ -1,7 +1,5 @@
 package fr.thibaud.command.bo;
 
-import java.util.Arrays;
-
 public class Panier {
 	private float montant;
 	private int indexLigne;
@@ -43,7 +41,9 @@ public class Panier {
 
 	@Override
 	public String toString() {
+		String listeLignePaniers = null;
+		for (LignePanier a : lignePaniers) if (a != null) listeLignePaniers += a.toString() + "\n";
 		return "Panier [montant=" + montant + ", indexLigne=" + indexLigne + ", \nlignePaniers="
-				+ Arrays.toString(lignePaniers) + "]";
+				+ listeLignePaniers + "]";
 	}
 }

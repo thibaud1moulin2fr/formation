@@ -26,6 +26,6 @@ public class Stylo extends Article {
 	}
 	@Override
 	public String toString() {
-		return "Stylo [couleur=" + couleur + ", \ntoString()=" + super.toString() + "]";
+		return "Stylo [couleur=" + couleur + ",\n\t" + super.toString() + "]";
 	}
 }

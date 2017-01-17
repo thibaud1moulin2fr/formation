@@ -26,6 +26,6 @@ public class Ramette extends Article {
 	}
 	@Override
 	public String toString() {
-		return "Ramette [grammage=" + grammage + ", \ntoString()=" + super.toString() + "]";
+		return "Ramette [grammage=" + grammage + ",\n\t" + super.toString() + "]";
 	}
 }
