@@ -3,6 +3,9 @@
  */
 package fr.thibaud.command.bo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author Eni Ecole
  *
@@ -13,10 +16,10 @@ public class AppliTestBO {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Article[] articles=null;
+		List<Article> articles=null;
 		try {
 			//Constituer un tableau d'articles
-			articles = new Article[20];
+			articles = new ArrayList<Article>();
 			
 	        //********************************
 	        // tester la gestion des articles
@@ -32,12 +35,12 @@ public class AppliTestBO {
 			System.out.println("---------------------------------------------------------------");
 			
 			// Ajout des articles au tableau. 
-			articles[0] = unBic;
-			articles[1] = uneRamette;
+			articles.add(unBic);
+			articles.add(uneRamette);
 			
-			articles[2] = new Stylo("Stypen", "PlumeS", "Stylo Plume Stypen", (float)5.5, 20, "jaune");
-			articles[3] = new Stylo("Waterman", "WOBGreen", "Waterman Orion Bille vert",(float)5.5, 20, "vert");
-			articles[4] = new Stylo("Parker", "PlumeP", "Stylo Plume Parker", (float)5.5, 5, "noir");
+			articles.add(new Stylo("Stypen", "PlumeS", "Stylo Plume Stypen", (float)5.5, 20, "jaune"));
+			articles.add(new Stylo("Waterman", "WOBGreen", "Waterman Orion Bille vert",(float)5.5, 20, "vert"));
+			articles.add(new Stylo("Parker", "PlumeP", "Stylo Plume Parker", (float)5.5, 5, "noir"));
 			
 			System.out.println("\nREM : Affichage du catalogue");
 			//charger les articles dans le catalogue
@@ -58,7 +61,7 @@ public class AppliTestBO {
 		try {
 			//à l'ajout d'une ligne dans le panier, le stock virtuel de l'article doit diminuer
 			//On ne peut commander plus que ce qu'il y a dans le stock virtuel (PlusEnStockException)
-			panier.addLigne(articles[0], 2);
+			panier.addLigne(articles.get(0), 2);
 			System.out.println("\nREM : Affichage de l'article de la premiere ligne du panier");
 			System.out.println(panier.getLigne(0).getArticle());
 			System.out.println("---------------------------------------------------------------");
@@ -69,11 +72,11 @@ public class AppliTestBO {
 
 
 		try {
-			panier.addLigne(articles[1], 13);
-			panier.addLigne(articles[2], 12);
+			panier.addLigne(articles.get(1), 13);
+			panier.addLigne(articles.get(2), 12);
 			System.out.println("\nREM : Un article n'a pas une quantité suffisante en stock");
 			//tester le dépassement de qté en stock (la ligne n'est pas ajoutée au panier)
-			panier.addLigne(articles[3], 30);
+			panier.addLigne(articles.get(3), 30);
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

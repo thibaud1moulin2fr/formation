@@ -1,5 +1,6 @@
 package fr.thibaud.command.bll;
 
+import java.util.List;
 import java.util.Scanner;
 
 import fr.thibaud.command.bo.Article;
@@ -10,7 +11,7 @@ import fr.thibaud.command.dal.memory.ArticleMemory;
 
 public class MgtCatalogue {
 	public static void Visualiser () {
-		Article[] articles = ArticleMemory.selectAll();
+		List<Article> articles = ArticleMemory.selectAll();
 		if (articles != null) {
 			Catalogue catalogue = new Catalogue(articles);
 			System.out.println(catalogue.toString());

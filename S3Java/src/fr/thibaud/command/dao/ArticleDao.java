@@ -1,44 +1,63 @@
 package fr.thibaud.command.dao;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
+import fr.thibaud.command.bll.Repository;
 import fr.thibaud.command.bo.Article;
 import fr.thibaud.command.bo.Ramette;
 import fr.thibaud.command.bo.Stylo;
 
-public class ArticleDao {
-	// JDBC driver name and database URL
-	static final String JDBC_DRIVER = "com.microsoft.sqlserver.jdbc.SQLServerDriver";  
-	static final String DB_URL = "jdbc:sqlserver://localhost/TPJSE_Commande";
-	//  Database credentials
-	static final String USER = "sa";
-	static final String PASS = "Pa$$w0rd";
-	public static Article[] getArticles () {
-		Connection con = null;
+public class ArticleDao implements Repository<Article> {
+
+	@Override
+	public void update(Article data) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void insert(Article data) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(Article data) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public <Type> Article selectById(Type id) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<Article> selectAll() throws Exception {
 		Statement statement = null;
 		Article article = null;
-		Article[] articles = null;
+		List<Article> articles = null;
 		String sql = null, reference = null, marque = null, designation = null, couleur = null, type = null;
-		int qteStock = 0, grammage = 0, index = 0;
+		int qteStock = 0, grammage = 0;
 		float prixUnitaire = (float) 0.0;
 		ResultSet rs = null;
 		try {
-			con = DriverManager.getConnection(DB_URL, USER, PASS);
-			statement = con.createStatement();
+			statement = PoolConnection.getConnection().createStatement();
 			sql = "Select * from Articles";
+			articles = new ArrayList<Article>();
 			rs = statement.executeQuery(sql);
-			articles = new Article[rs.getFetchSize()];
 			while (rs.next()) {
+				article = null;
 				marque = rs.getString("marque");
 				reference = rs.getString("reference");
 				designation = rs.getString("designation");
 				prixUnitaire = rs.getFloat("prixUnitaire");
 				qteStock = rs.getInt("qteStock");
-				type = rs.getString("type");
+				type = rs.getString("type").trim();
 				if (type.equals("Ramette")) {
 					grammage = rs.getInt("grammage");
 					article = new Ramette(marque, reference, designation, prixUnitaire, qteStock, grammage);
@@ -46,7 +65,7 @@ public class ArticleDao {
 					couleur = rs.getString("couleur");
 					article = new Stylo(marque, reference, designation, prixUnitaire, qteStock, couleur);
 				}
-				articles[index] = article;
+				articles.add(article);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -54,4 +73,11 @@ public class ArticleDao {
 		}
 		return articles;
 	}
+
+	@Override
+	public <Type> List<Article> selectAll(Type value) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

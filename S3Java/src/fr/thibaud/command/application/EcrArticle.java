@@ -1,9 +1,5 @@
 package fr.thibaud.command.application;
 
-import fr.thibaud.command.bo.Article;
-import fr.thibaud.command.bo.Catalogue;
-import fr.thibaud.command.dao.ArticleDao;
-
 public class EcrArticle {
 
 	public static void main(String[] args) {
@@ -24,8 +20,8 @@ public class EcrArticle {
 //				System.out.println("Mauvaise entrée (A/Q)");
 //			}
 //		}
-		Article[] articles = ArticleDao.getArticles();
-		Catalogue catalogue = new Catalogue(articles);
-		catalogue.toString();
+//		List<Article> articles = ArticleDao.selectAll();
+//		Catalogue catalogue = new Catalogue(articles);
+//		System.out.println(catalogue.toString());
 	}
 }

@@ -1,14 +1,16 @@
 package fr.thibaud.command.bo;
 
+import java.util.List;
+
 public class Catalogue {
 	
-	private Article[] articles;
+	private List<Article> articles;
 	
-	public Catalogue(Article[] articles) {
+	public Catalogue(List<Article> articles) {
 		super();
 		this.articles = articles;
 	}
-	public Article[] getArticlesAuCatalogue() {
+	public List<Article> getArticlesAuCatalogue() {
 		return this.articles;
 	}
 	
