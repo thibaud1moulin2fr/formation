@@ -1,5 +1,9 @@
 package fr.thibaud.command.bo;
 public class Ramette extends Article {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int grammage;
 	public Ramette (String marque, String ref, String designation, float pu, int grammage) {
 		super();

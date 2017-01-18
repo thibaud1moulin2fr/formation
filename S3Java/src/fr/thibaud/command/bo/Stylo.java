@@ -1,5 +1,9 @@
 package fr.thibaud.command.bo;
 public class Stylo extends Article {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String couleur;
 	public Stylo (String marque, String ref, String designation, float pu, String couleur) {
 		super();
