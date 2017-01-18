@@ -41,6 +41,7 @@ public class ArticleMemory {
 			e.printStackTrace();
 		}
 		newArticles = new Article[size + 1];
+		for (int i = 0; i < articles.length; i++) newArticles[i] = articles[i];
 		newArticles[size] = article;
 		Serialiseur.serialiser(newArticles, os);
 	}
