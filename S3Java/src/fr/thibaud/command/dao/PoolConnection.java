@@ -6,25 +6,38 @@ import java.sql.SQLException;
 
 public class PoolConnection {
 
-	// JDBC driver name and database URL
-	static final String JDBC_DRIVER = "com.microsoft.sqlserver.jdbc.SQLServerDriver";  
-	static final String DB_URL = "jdbc:sqlserver://127.0.0.1;databaseName=TPJSE_Commande";
-	//  Database credentials
-	static final String USER = "sa";
-	static final String PASS = "Pa$$w0rd";
-	public static Connection getConnection() {
+	private static Connection connection = null;
+	static {
 		try {
-			Class.forName(JDBC_DRIVER);
+			Class.forName(Settings.getProperty("JDBC_DRIVER"));
 		} catch (ClassNotFoundException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		try {
-			return DriverManager.getConnection(DB_URL + ";user=" + USER + ";password=" + PASS);
+			connection = DriverManager.getConnection(Settings.getProperty("DB_URL") + ";user=" + Settings.getProperty("USER") + ";password=" + Settings.getProperty("PASS"));
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	public static Connection getConnection() {
+		try {
+			if (connection != null && !connection.isClosed())
+			return connection;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;
+	}
+	public static void closeConnection() {
+		try {
+			if (connection != null && !connection.isClosed())
+			connection.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }
