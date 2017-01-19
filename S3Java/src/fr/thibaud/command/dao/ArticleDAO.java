@@ -7,7 +7,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import fr.thibaud.command.bll.Repository;
 import fr.thibaud.command.bo.Article;
 import fr.thibaud.command.bo.Ramette;
 import fr.thibaud.command.bo.Stylo;
@@ -18,7 +17,7 @@ public class ArticleDAO implements Repository<Article> {
 	public void update(Article data) throws Exception {
 		PreparedStatement statement = null;
 		String sql = null;
-		sql = "Update Articles set values('?','?','?','?','?','?','?','?') where reference = '?';";
+		sql = "Update Articles set reference = ?, marque = ?, designation = ?, prixUnitaire = ?, qteStock = ?, grammage = ?, couleur = ?, type = ? where reference = ?;";
 		statement = PoolConnection.getConnection().prepareStatement(sql);
 		statement.setString(1, data.getReference());
 		statement.setString(2, data.getMarque());
@@ -42,7 +41,7 @@ public class ArticleDAO implements Repository<Article> {
 	public void insert(Article data) throws Exception {
 		PreparedStatement statement = null;
 		String sql = null;
-		sql = "Insert into Articles values('?','?','?','?','?','?','?','?');";
+		sql = "Insert into Articles values(?,?,?,?,?,?,?,?)";
 		statement = PoolConnection.getConnection().prepareStatement(sql);
 		statement.setString(1, data.getReference());
 		statement.setString(2, data.getMarque());
@@ -52,11 +51,11 @@ public class ArticleDAO implements Repository<Article> {
 		if (data instanceof Stylo) {
 			statement.setInt(6, 0);
 			statement.setString(7, ((Stylo) data).getCouleur());
-			statement.setString(8, Stylo.class.getName());
+			statement.setString(8, "Stylo");
 		} else if (data instanceof Ramette) {
 			statement.setInt(6, ((Ramette) data).getGrammage());
 			statement.setString(7, null);
-			statement.setString(8, Ramette.class.getName());
+			statement.setString(8, "Ramette");
 		}
 		statement.execute();
 	}
@@ -65,7 +64,7 @@ public class ArticleDAO implements Repository<Article> {
 	public void delete(Article data) throws Exception {
 		PreparedStatement statement = null;
 		String sql = null;
-		sql = "Delete from Articles where reference = '?';";
+		sql = "Delete from Articles where reference = ?;";
 		statement = PoolConnection.getConnection().prepareStatement(sql);
 		statement.setString(1, data.getReference());
 		statement.execute();
@@ -90,10 +89,10 @@ public class ArticleDAO implements Repository<Article> {
 			prixUnitaire = rs.getFloat("prixUnitaire");
 			qteStock = rs.getInt("qteStock");
 			type = rs.getString("type").trim();
-			if (type.equals(Ramette.class.getName())) {
+			if (type.equals("Ramette")) {
 				grammage = rs.getInt("grammage");
 				article = new Ramette(marque, reference, designation, prixUnitaire, qteStock, grammage);
-			} else if (type.equals(Stylo.class.getName())) {
+			} else if (type.equals("Stylo")) {
 				couleur = rs.getString("couleur");
 				article = new Stylo(marque, reference, designation, prixUnitaire, qteStock, couleur);
 			}
@@ -122,10 +121,10 @@ public class ArticleDAO implements Repository<Article> {
 				prixUnitaire = rs.getFloat("prixUnitaire");
 				qteStock = rs.getInt("qteStock");
 				type = rs.getString("type").trim();
-				if (type.equals(Ramette.class.getName())) {
+				if (type.equals("Ramette")) {
 					grammage = rs.getInt("grammage");
 					article = new Ramette(marque, reference, designation, prixUnitaire, qteStock, grammage);
-				} else if (type.equals(Stylo.class.getName())) {
+				} else if (type.equals("Stylo")) {
 					couleur = rs.getString("couleur");
 					article = new Stylo(marque, reference, designation, prixUnitaire, qteStock, couleur);
 				}
@@ -158,10 +157,10 @@ public class ArticleDAO implements Repository<Article> {
 			designation = rs.getString("designation");
 			prixUnitaire = rs.getFloat("prixUnitaire");
 			qteStock = rs.getInt("qteStock");
-			if (value.equals(Ramette.class.getName())) {
+			if (value.equals("Ramette")) {
 				grammage = rs.getInt("grammage");
 				article = new Ramette(marque, reference, designation, prixUnitaire, qteStock, grammage);
-			} else if (value.equals(Stylo.class.getName())) {
+			} else if (value.equals("Stylo")) {
 				couleur = rs.getString("couleur");
 				article = new Stylo(marque, reference, designation, prixUnitaire, qteStock, couleur);
 			}

@@ -1,19 +1,16 @@
 /**
  * 
  */
-package fr.thibaud.command.application;
+package fr.thibaud.command.dao;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import fr.thibaud.command.bll.Repository;
 import fr.thibaud.command.bo.Article;
 import fr.thibaud.command.bo.Catalogue;
 import fr.thibaud.command.bo.Panier;
 import fr.thibaud.command.bo.Ramette;
 import fr.thibaud.command.bo.Stylo;
-import fr.thibaud.command.dao.ArticleDAO;
-import fr.thibaud.command.dao.PoolConnection;
 
 /**
  * @author Eni Ecole

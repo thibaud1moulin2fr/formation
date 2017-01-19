@@ -20,7 +20,7 @@ public class EcrArticle {
 //				System.out.println("Mauvaise entrée (A/Q)");
 //			}
 //		}
-//		List<Article> articles = ArticleDao.selectAll();
+//		List<Article> articles = ArticleDAO.selectAll();
 //		Catalogue catalogue = new Catalogue(articles);
 //		System.out.println(catalogue.toString());
 	}

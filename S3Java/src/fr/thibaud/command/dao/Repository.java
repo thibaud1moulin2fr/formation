@@ -1,7 +1,7 @@
 /**
  * 
  */
-package fr.thibaud.command.bll;
+package fr.thibaud.command.dao;
 
 import java.util.List;
 

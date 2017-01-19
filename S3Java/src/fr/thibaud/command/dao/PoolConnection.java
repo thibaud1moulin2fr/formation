@@ -7,29 +7,21 @@ import java.sql.SQLException;
 public class PoolConnection {
 
 	private static Connection connection = null;
-	static {
-		try {
-			Class.forName(Settings.getProperty("JDBC_DRIVER"));
-		} catch (ClassNotFoundException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		try {
-			connection = DriverManager.getConnection(Settings.getProperty("DB_URL") + ";user=" + Settings.getProperty("USER") + ";password=" + Settings.getProperty("PASS"));
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
 	public static Connection getConnection() {
 		try {
-			if (connection != null && !connection.isClosed())
-			return connection;
+			if (connection == null || connection.isClosed()) {
+				Class.forName(Settings.getProperty("JDBC_DRIVER"));
+				connection = DriverManager.getConnection(Settings.getProperty("DB_URL") + ";user=" + Settings.getProperty("USER") + ";password=" + Settings.getProperty("PASS"));
+				return connection;
+			}
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return null;
+		return connection;
 	}
 	public static void closeConnection() {
 		try {
