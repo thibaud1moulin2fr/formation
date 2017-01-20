@@ -5,12 +5,14 @@ package fr.thibaud.command.dao;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.logging.LogManager;
 
 import fr.thibaud.command.bo.Article;
 import fr.thibaud.command.bo.Catalogue;
 import fr.thibaud.command.bo.Panier;
 import fr.thibaud.command.bo.Ramette;
 import fr.thibaud.command.bo.Stylo;
+import fr.thibaud.command.log.Log01;
 
 /**
  * @author Eni Ecole
