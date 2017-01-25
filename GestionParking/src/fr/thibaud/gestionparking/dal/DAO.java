@@ -1,11 +1,12 @@
 package fr.thibaud.gestionparking.dal;
 
+import java.sql.Connection;
 import java.util.List;
 
 public abstract class DAO<T> {
-	protected ConnectionDAO con = null;
+	protected Connection con = null;
 
-	public DAO(ConnectionDAO con) {
+	public DAO(Connection con) {
 		super();
 		this.con = con;
 	}

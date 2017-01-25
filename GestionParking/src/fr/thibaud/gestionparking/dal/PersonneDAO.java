@@ -1,6 +1,7 @@
 package fr.thibaud.gestionparking.dal;
 
 import java.sql.CallableStatement;
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -9,8 +10,7 @@ import java.util.List;
 import fr.thibaud.gestionparking.model.Personne;
 
 public class PersonneDAO extends DAO<Personne> {
-
-	public PersonneDAO(ConnectionDAO con) {
+	public PersonneDAO(Connection con) {
 		super(con);
 		// TODO Auto-generated constructor stub
 	}
@@ -86,7 +86,7 @@ public class PersonneDAO extends DAO<Personne> {
 		Personne personne = null;
 		List<Personne> personnes = new ArrayList<Personne>();
 		try {
-			CallableStatement callableStatement = ConnectionDAO.getConnection().prepareCall("{call FindPersonnes()}");
+			CallableStatement callableStatement = ConnectionDAO.getConnection().prepareCall("{call FindPersonnes}");
 			rs = callableStatement.executeQuery();
 			while (rs.next()) {
 				personne = new Personne(rs.getInt("IdPersonne"), rs.getString("Nom"), rs.getString("Prenom"));

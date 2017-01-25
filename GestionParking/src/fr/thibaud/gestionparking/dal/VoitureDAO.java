@@ -1,6 +1,7 @@
 package fr.thibaud.gestionparking.dal;
 
 import java.sql.CallableStatement;
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -11,7 +12,7 @@ import fr.thibaud.gestionparking.model.Voiture;
 
 public class VoitureDAO extends DAO<Voiture> {
 
-	public VoitureDAO(ConnectionDAO con) {
+	public VoitureDAO(Connection con) {
 		super(con);
 		// TODO Auto-generated constructor stub
 	}
