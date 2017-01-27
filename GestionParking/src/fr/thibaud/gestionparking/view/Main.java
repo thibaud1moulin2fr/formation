@@ -1,7 +1,5 @@
 package fr.thibaud.gestionparking.view;
 
-import java.util.List;
-
 import fr.thibaud.gestionparking.dal.DAO;
 import fr.thibaud.gestionparking.dal.PersonneDAO;
 import fr.thibaud.gestionparking.dal.VoitureDAO;
@@ -19,10 +17,11 @@ public class Main {
 		daoP = new PersonneDAO();
 		DAO<Voiture> daoV = null;
 		daoV = new VoitureDAO();
-		Personne personne = new Personne("Moulin", "Thibaud");
-		daoP.create(personne);
-		Voiture voiture = new Voiture("Clio Renault", "AY 639 BM");
-		daoV.create(voiture);
+		Personne personne = daoP.find().get(0);
+		Voiture voiture = daoV.find().get(0);
+		voiture.setPersonne(personne);
+		daoV.update(voiture);
+		
 	}
 
 }

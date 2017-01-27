@@ -59,7 +59,6 @@ public class VoitureDAO extends DAO<Voiture> {
 			updated = (count == 1) ? true : false;
 		} catch (Exception e) {
 			logger.log(Level.SEVERE, obj.toString() + " not updated.\n" + e.toString());
-			e.printStackTrace();
 		}
 		if (updated)
 			logger.log(Level.INFO, obj.toString() + " updated.");
