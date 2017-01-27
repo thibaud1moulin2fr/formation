@@ -1,0 +1,158 @@
+janv. 27, 2017 12:01:20 PM fr.thibaud.gestionparking.dal.PersonneDAO create
+INFOS: Personne [idPersonne=109, nom=Moulin, prenom=Thibaud] inserted.
+janv. 27, 2017 12:01:20 PM fr.thibaud.gestionparking.dal.PersonneDAO create
+INFOS: Personne [idPersonne=110, nom=Du Poids, prenom=Marc] inserted.
+janv. 27, 2017 12:01:20 PM fr.thibaud.gestionparking.dal.PersonneDAO find
+INFOS: [Personne [idPersonne=109, nom=Moulin, prenom=Thibaud], Personne [idPersonne=110, nom=Du Poids, prenom=Marc]]
+found.
+janv. 27, 2017 12:01:20 PM fr.thibaud.gestionparking.dal.PersonneDAO find
+INFOS: Personne [idPersonne=109, nom=Moulin, prenom=Thibaud] found.
+janv. 27, 2017 12:01:20 PM fr.thibaud.gestionparking.dal.PersonneDAO find
+INFOS: [Personne [idPersonne=109, nom=Moulin, prenom=Thibaud], Personne [idPersonne=110, nom=Du Poids, prenom=Marc]]
+found.
+janv. 27, 2017 12:01:20 PM fr.thibaud.gestionparking.dal.PersonneDAO delete
+INFOS: Personne [idPersonne=109, nom=Moulin, prenom=Thibaud] deleted.
+janv. 27, 2017 12:01:20 PM fr.thibaud.gestionparking.dal.PersonneDAO delete
+INFOS: Personne [idPersonne=110, nom=Du Poids, prenom=Marc] deleted.
+janv. 27, 2017 12:01:20 PM fr.thibaud.gestionparking.dal.PersonneDAO create
+INFOS: Personne [idPersonne=111, nom=Moulin, prenom=Thibaud] inserted.
+janv. 27, 2017 12:01:20 PM fr.thibaud.gestionparking.dal.PersonneDAO create
+INFOS: Personne [idPersonne=112, nom=Du Poids, prenom=Marc] inserted.
+janv. 27, 2017 12:01:20 PM fr.thibaud.gestionparking.dal.PersonneDAO find
+INFOS: [Personne [idPersonne=111, nom=Moulin, prenom=Thibaud], Personne [idPersonne=112, nom=Du Poids, prenom=Marc]]
+found.
+janv. 27, 2017 12:01:20 PM fr.thibaud.gestionparking.dal.PersonneDAO find
+INFOS: [Personne [idPersonne=111, nom=Moulin, prenom=Thibaud], Personne [idPersonne=112, nom=Du Poids, prenom=Marc]]
+found.
+janv. 27, 2017 12:01:20 PM fr.thibaud.gestionparking.dal.PersonneDAO delete
+INFOS: Personne [idPersonne=111, nom=Moulin, prenom=Thibaud] deleted.
+janv. 27, 2017 12:01:20 PM fr.thibaud.gestionparking.dal.PersonneDAO delete
+INFOS: Personne [idPersonne=112, nom=Du Poids, prenom=Marc] deleted.
+janv. 27, 2017 12:01:20 PM fr.thibaud.gestionparking.dal.PersonneDAO create
+INFOS: Personne [idPersonne=113, nom=Moulin, prenom=Thibaud] inserted.
+janv. 27, 2017 12:01:20 PM fr.thibaud.gestionparking.dal.PersonneDAO create
+INFOS: Personne [idPersonne=114, nom=Du Poids, prenom=Marc] inserted.
+janv. 27, 2017 12:01:20 PM fr.thibaud.gestionparking.dal.PersonneDAO find
+INFOS: [Personne [idPersonne=113, nom=Moulin, prenom=Thibaud], Personne [idPersonne=114, nom=Du Poids, prenom=Marc]]
+found.
+janv. 27, 2017 12:01:20 PM fr.thibaud.gestionparking.dal.PersonneDAO update
+GRAVE: Personne [idPersonne=113, nom=Lamartine, prenom=Jean-Hubert] not updated.
+janv. 27, 2017 12:01:20 PM fr.thibaud.gestionparking.dal.PersonneDAO find
+INFOS: Personne [idPersonne=113, nom=Lamartine, prenom=Jean-Hubert] found.
+janv. 27, 2017 12:01:20 PM fr.thibaud.gestionparking.dal.PersonneDAO find
+INFOS: [Personne [idPersonne=113, nom=Lamartine, prenom=Jean-Hubert], Personne [idPersonne=114, nom=Du Poids, prenom=Marc]]
+found.
+janv. 27, 2017 12:01:20 PM fr.thibaud.gestionparking.dal.PersonneDAO delete
+INFOS: Personne [idPersonne=113, nom=Lamartine, prenom=Jean-Hubert] deleted.
+janv. 27, 2017 12:01:20 PM fr.thibaud.gestionparking.dal.PersonneDAO delete
+INFOS: Personne [idPersonne=114, nom=Du Poids, prenom=Marc] deleted.
+janv. 27, 2017 12:01:20 PM fr.thibaud.gestionparking.dal.PersonneDAO create
+INFOS: Personne [idPersonne=115, nom=Moulin, prenom=Thibaud] inserted.
+janv. 27, 2017 12:01:20 PM fr.thibaud.gestionparking.dal.PersonneDAO create
+INFOS: Personne [idPersonne=116, nom=Du Poids, prenom=Marc] inserted.
+janv. 27, 2017 12:01:20 PM fr.thibaud.gestionparking.dal.PersonneDAO find
+INFOS: [Personne [idPersonne=115, nom=Moulin, prenom=Thibaud], Personne [idPersonne=116, nom=Du Poids, prenom=Marc]]
+found.
+janv. 27, 2017 12:01:20 PM fr.thibaud.gestionparking.dal.PersonneDAO find
+INFOS: [Personne [idPersonne=115, nom=Moulin, prenom=Thibaud], Personne [idPersonne=116, nom=Du Poids, prenom=Marc]]
+found.
+janv. 27, 2017 12:01:20 PM fr.thibaud.gestionparking.dal.PersonneDAO delete
+INFOS: Personne [idPersonne=115, nom=Moulin, prenom=Thibaud] deleted.
+janv. 27, 2017 12:01:21 PM fr.thibaud.gestionparking.dal.PersonneDAO delete
+INFOS: Personne [idPersonne=116, nom=Du Poids, prenom=Marc] deleted.
+janv. 27, 2017 12:01:21 PM fr.thibaud.gestionparking.dal.PersonneDAO create
+INFOS: Personne [idPersonne=117, nom=Moulin, prenom=Thibaud] inserted.
+janv. 27, 2017 12:01:21 PM fr.thibaud.gestionparking.dal.PersonneDAO create
+INFOS: Personne [idPersonne=118, nom=Du Poids, prenom=Marc] inserted.
+janv. 27, 2017 12:01:21 PM fr.thibaud.gestionparking.dal.PersonneDAO find
+INFOS: [Personne [idPersonne=117, nom=Moulin, prenom=Thibaud], Personne [idPersonne=118, nom=Du Poids, prenom=Marc]]
+found.
+janv. 27, 2017 12:01:21 PM fr.thibaud.gestionparking.dal.PersonneDAO delete
+INFOS: Personne [idPersonne=118, nom=Du Poids, prenom=Marc] deleted.
+janv. 27, 2017 12:01:21 PM fr.thibaud.gestionparking.dal.PersonneDAO find
+INFOS: [Personne [idPersonne=117, nom=Moulin, prenom=Thibaud]]
+found.
+janv. 27, 2017 12:01:21 PM fr.thibaud.gestionparking.dal.PersonneDAO find
+INFOS: [Personne [idPersonne=117, nom=Moulin, prenom=Thibaud]]
+found.
+janv. 27, 2017 12:01:21 PM fr.thibaud.gestionparking.dal.PersonneDAO delete
+INFOS: Personne [idPersonne=117, nom=Moulin, prenom=Thibaud] deleted.
+janv. 27, 2017 12:01:21 PM fr.thibaud.gestionparking.dal.VoitureDAO create
+INFOS: Voiture [idVoiture=83, nom=Renault Clio II, pI=KO 969 NU] inserted.
+janv. 27, 2017 12:01:21 PM fr.thibaud.gestionparking.dal.VoitureDAO create
+INFOS: Voiture [idVoiture=84, nom=Lamborgini Gallardo Rose Fushia, pI=SU 503 BT] inserted.
+janv. 27, 2017 12:01:21 PM fr.thibaud.gestionparking.dal.VoitureDAO find
+INFOS: [Voiture [idVoiture=83, nom=Renault Clio II, pI=KO 969 NU], Voiture [idVoiture=84, nom=Lamborgini Gallardo Rose Fushia, pI=SU 503 BT]]
+found.
+janv. 27, 2017 12:01:21 PM fr.thibaud.gestionparking.dal.VoitureDAO delete
+GRAVE: Voiture [idVoiture=84, nom=Lamborgini Gallardo Rose Fushia, pI=SU 503 BT] not deleted.
+janv. 27, 2017 12:01:21 PM fr.thibaud.gestionparking.dal.VoitureDAO find
+INFOS: [Voiture [idVoiture=83, nom=Renault Clio II, pI=KO 969 NU]]
+found.
+janv. 27, 2017 12:01:21 PM fr.thibaud.gestionparking.dal.VoitureDAO find
+INFOS: [Voiture [idVoiture=83, nom=Renault Clio II, pI=KO 969 NU]]
+found.
+janv. 27, 2017 12:01:21 PM fr.thibaud.gestionparking.dal.VoitureDAO delete
+GRAVE: Voiture [idVoiture=83, nom=Renault Clio II, pI=KO 969 NU] not deleted.
+janv. 27, 2017 12:01:21 PM fr.thibaud.gestionparking.dal.VoitureDAO create
+INFOS: Voiture [idVoiture=85, nom=Renault Clio II, pI=KO 969 NU] inserted.
+janv. 27, 2017 12:01:21 PM fr.thibaud.gestionparking.dal.VoitureDAO create
+INFOS: Voiture [idVoiture=86, nom=Lamborgini Gallardo Rose Fushia, pI=SU 503 BT] inserted.
+janv. 27, 2017 12:01:21 PM fr.thibaud.gestionparking.dal.VoitureDAO find
+INFOS: [Voiture [idVoiture=85, nom=Renault Clio II, pI=KO 969 NU], Voiture [idVoiture=86, nom=Lamborgini Gallardo Rose Fushia, pI=SU 503 BT]]
+found.
+janv. 27, 2017 12:01:21 PM fr.thibaud.gestionparking.dal.VoitureDAO find
+INFOS: Voiture [idVoiture=85, nom=Renault Clio II, pI=KO 969 NU] found.
+janv. 27, 2017 12:01:21 PM fr.thibaud.gestionparking.dal.VoitureDAO find
+INFOS: [Voiture [idVoiture=85, nom=Renault Clio II, pI=KO 969 NU], Voiture [idVoiture=86, nom=Lamborgini Gallardo Rose Fushia, pI=SU 503 BT]]
+found.
+janv. 27, 2017 12:01:21 PM fr.thibaud.gestionparking.dal.VoitureDAO delete
+GRAVE: Voiture [idVoiture=85, nom=Renault Clio II, pI=KO 969 NU] not deleted.
+janv. 27, 2017 12:01:21 PM fr.thibaud.gestionparking.dal.VoitureDAO delete
+GRAVE: Voiture [idVoiture=86, nom=Lamborgini Gallardo Rose Fushia, pI=SU 503 BT] not deleted.
+janv. 27, 2017 12:01:21 PM fr.thibaud.gestionparking.dal.VoitureDAO create
+INFOS: Voiture [idVoiture=87, nom=Renault Clio II, pI=KO 969 NU] inserted.
+janv. 27, 2017 12:01:21 PM fr.thibaud.gestionparking.dal.VoitureDAO create
+INFOS: Voiture [idVoiture=88, nom=Lamborgini Gallardo Rose Fushia, pI=SU 503 BT] inserted.
+janv. 27, 2017 12:01:21 PM fr.thibaud.gestionparking.dal.VoitureDAO find
+INFOS: [Voiture [idVoiture=87, nom=Renault Clio II, pI=KO 969 NU], Voiture [idVoiture=88, nom=Lamborgini Gallardo Rose Fushia, pI=SU 503 BT]]
+found.
+janv. 27, 2017 12:01:21 PM fr.thibaud.gestionparking.dal.VoitureDAO find
+INFOS: [Voiture [idVoiture=87, nom=Renault Clio II, pI=KO 969 NU], Voiture [idVoiture=88, nom=Lamborgini Gallardo Rose Fushia, pI=SU 503 BT]]
+found.
+janv. 27, 2017 12:01:21 PM fr.thibaud.gestionparking.dal.VoitureDAO delete
+GRAVE: Voiture [idVoiture=87, nom=Renault Clio II, pI=KO 969 NU] not deleted.
+janv. 27, 2017 12:01:21 PM fr.thibaud.gestionparking.dal.VoitureDAO delete
+GRAVE: Voiture [idVoiture=88, nom=Lamborgini Gallardo Rose Fushia, pI=SU 503 BT] not deleted.
+janv. 27, 2017 12:01:21 PM fr.thibaud.gestionparking.dal.VoitureDAO create
+INFOS: Voiture [idVoiture=89, nom=Renault Clio II, pI=KO 969 NU] inserted.
+janv. 27, 2017 12:01:22 PM fr.thibaud.gestionparking.dal.VoitureDAO create
+INFOS: Voiture [idVoiture=90, nom=Lamborgini Gallardo Rose Fushia, pI=SU 503 BT] inserted.
+janv. 27, 2017 12:01:22 PM fr.thibaud.gestionparking.dal.VoitureDAO find
+INFOS: [Voiture [idVoiture=89, nom=Renault Clio II, pI=KO 969 NU], Voiture [idVoiture=90, nom=Lamborgini Gallardo Rose Fushia, pI=SU 503 BT]]
+found.
+janv. 27, 2017 12:01:22 PM fr.thibaud.gestionparking.dal.VoitureDAO find
+INFOS: [Voiture [idVoiture=89, nom=Renault Clio II, pI=KO 969 NU], Voiture [idVoiture=90, nom=Lamborgini Gallardo Rose Fushia, pI=SU 503 BT]]
+found.
+janv. 27, 2017 12:01:22 PM fr.thibaud.gestionparking.dal.VoitureDAO delete
+GRAVE: Voiture [idVoiture=89, nom=Renault Clio II, pI=KO 969 NU] not deleted.
+janv. 27, 2017 12:01:22 PM fr.thibaud.gestionparking.dal.VoitureDAO delete
+GRAVE: Voiture [idVoiture=90, nom=Lamborgini Gallardo Rose Fushia, pI=SU 503 BT] not deleted.
+janv. 27, 2017 12:01:22 PM fr.thibaud.gestionparking.dal.VoitureDAO create
+INFOS: Voiture [idVoiture=91, nom=Renault Clio II, pI=KO 969 NU] inserted.
+janv. 27, 2017 12:01:22 PM fr.thibaud.gestionparking.dal.VoitureDAO create
+INFOS: Voiture [idVoiture=92, nom=Lamborgini Gallardo Rose Fushia, pI=SU 503 BT] inserted.
+janv. 27, 2017 12:01:22 PM fr.thibaud.gestionparking.dal.VoitureDAO find
+INFOS: [Voiture [idVoiture=91, nom=Renault Clio II, pI=KO 969 NU], Voiture [idVoiture=92, nom=Lamborgini Gallardo Rose Fushia, pI=SU 503 BT]]
+found.
+janv. 27, 2017 12:01:22 PM fr.thibaud.gestionparking.dal.VoitureDAO update
+GRAVE: Voiture [idVoiture=91, nom=Opel Corsa III, pI=MI 547 JB] not updated.
+janv. 27, 2017 12:01:22 PM fr.thibaud.gestionparking.dal.VoitureDAO find
+INFOS: Voiture [idVoiture=91, nom=Opel Corsa III, pI=MI 547 JB] found.
+janv. 27, 2017 12:01:22 PM fr.thibaud.gestionparking.dal.VoitureDAO find
+INFOS: [Voiture [idVoiture=91, nom=Opel Corsa III, pI=MI 547 JB], Voiture [idVoiture=92, nom=Lamborgini Gallardo Rose Fushia, pI=SU 503 BT]]
+found.
+janv. 27, 2017 12:01:22 PM fr.thibaud.gestionparking.dal.VoitureDAO delete
+GRAVE: Voiture [idVoiture=91, nom=Opel Corsa III, pI=MI 547 JB] not deleted.
+janv. 27, 2017 12:01:22 PM fr.thibaud.gestionparking.dal.VoitureDAO delete
+GRAVE: Voiture [idVoiture=92, nom=Lamborgini Gallardo Rose Fushia, pI=SU 503 BT] not deleted.

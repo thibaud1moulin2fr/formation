@@ -6,21 +6,23 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import fr.thibaud.gestionparking.model.Personne;
 
 public class PersonneDAO extends DAO<Personne> {
-	public PersonneDAO(Connection con) {
-		super(con);
-		// TODO Auto-generated constructor stub
+	private static Logger logger = MonLogger.getLogger(PersonneDAO.class.getName());
+
+	public PersonneDAO() {
+		super();
 	}
 
 	@Override
 	public Personne create(Personne obj) {
 		ResultSet rs = null;
-		try {
-			CallableStatement callableStatement = ConnectionDAO.getConnection()
-					.prepareCall("{call CreatePersonne(?,?)}");
+		try (Connection con = ConnectionDAO.getConnection()) {
+			CallableStatement callableStatement = con.prepareCall("{call CreatePersonne(?,?)}");
 			callableStatement.setString(1, obj.getNom());
 			callableStatement.setString(2, obj.getPrenom());
 			rs = callableStatement.executeQuery();
@@ -28,37 +30,51 @@ public class PersonneDAO extends DAO<Personne> {
 				obj.setIdPersonne(rs.getInt(1));
 			}
 		} catch (Exception e) {
-			// TODO: handle exception
+			logger.log(Level.SEVERE, obj.toString() + " not inserted.\n" + e.toString());
 		}
+		if (obj.getIdPersonne() != null)
+			logger.log(Level.INFO, obj.toString() + " inserted.");
+		else
+			logger.log(Level.SEVERE, obj.toString() + " not inserted.");
 		return obj;
 	}
 
 	@Override
 	public boolean update(Personne obj) {
-		boolean deleted = false;
-		try {
-			CallableStatement callableStatement = ConnectionDAO.getConnection()
-					.prepareCall("{call UpdateVoiture(?,?,?)}");
+		boolean updated = false;
+		try (Connection con = ConnectionDAO.getConnection()) {
+			CallableStatement callableStatement = con.prepareCall("{call UpdatePersonne(?,?,?)}");
 			callableStatement.setInt(1, obj.getIdPersonne());
 			callableStatement.setString(2, obj.getNom());
 			callableStatement.setString(3, obj.getPrenom());
-			deleted = callableStatement.execute();
+			int count = callableStatement.executeUpdate();
+			updated = (count == 1) ? true : false;
 		} catch (Exception e) {
-			// TODO: handle exception
+			logger.log(Level.SEVERE, obj.toString() + " not updated.\n" + e.toString());
 		}
-		return deleted;
+		if (updated)
+			logger.log(Level.INFO, obj.toString() + " updated.");
+		else
+			logger.log(Level.SEVERE, obj.toString() + " not updated.");
+		return updated;
 	}
 
 	@Override
 	public boolean delete(Personne obj) {
 		boolean deleted = false;
-		try {
-			CallableStatement callableStatement = ConnectionDAO.getConnection().prepareCall("{call DeletePersonne(?)}");
+		int count = 0;
+		try (Connection con = ConnectionDAO.getConnection()) {
+			CallableStatement callableStatement = con.prepareCall("{call DeletePersonne(?)}");
 			callableStatement.setInt(1, obj.getIdPersonne());
-			deleted = callableStatement.execute();
+			count = callableStatement.executeUpdate();
+			deleted = (count > 0) ? true : false;
 		} catch (Exception e) {
-			// TODO: handle exception
+			logger.log(Level.SEVERE, obj.toString() + " not deleted.\n" + e.toString());
 		}
+		if (deleted)
+			logger.log(Level.INFO, obj.toString() + " deleted.");
+		else
+			logger.log(Level.SEVERE, obj.toString() + " not deleted.");
 		return deleted;
 	}
 
@@ -66,17 +82,20 @@ public class PersonneDAO extends DAO<Personne> {
 	public Personne find(int id) {
 		ResultSet rs = null;
 		Personne personne = null;
-		try {
-			CallableStatement callableStatement = ConnectionDAO.getConnection().prepareCall("{call FindPersonne(?)}");
+		try (Connection con = ConnectionDAO.getConnection()) {
+			CallableStatement callableStatement = con.prepareCall("{call FindPersonne(?)}");
 			callableStatement.setInt(1, id);
 			rs = callableStatement.executeQuery();
 			if (rs.next()) {
-				personne = new Personne(rs.getInt("IdPersonne"), rs.getString("Nom"), rs.getString("Prenom"));
+				personne = itemBuilder(rs);
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.log(Level.SEVERE, e.toString());
 		}
+		if (personne != null)
+			logger.log(Level.INFO, personne.toString() + " found.");
+		else
+			logger.log(Level.SEVERE, "Personne for ID : " + id + " not found.");
 		return personne;
 	}
 
@@ -85,19 +104,32 @@ public class PersonneDAO extends DAO<Personne> {
 		ResultSet rs = null;
 		Personne personne = null;
 		List<Personne> personnes = new ArrayList<Personne>();
-		try {
-			CallableStatement callableStatement = ConnectionDAO.getConnection().prepareCall("{call FindPersonnes}");
+		try (Connection con = ConnectionDAO.getConnection()) {
+			CallableStatement callableStatement = con.prepareCall("{call FindPersonnes}");
 			rs = callableStatement.executeQuery();
 			while (rs.next()) {
-				personne = new Personne(rs.getInt("IdPersonne"), rs.getString("Nom"), rs.getString("Prenom"));
-				if (personne != null)
+				personne = itemBuilder(rs);
+				if (personne != null) {
 					personnes.add(personne);
+				}
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.log(Level.SEVERE, e.toString());
 		}
+		if (personnes.size() == 0)
+			logger.log(Level.INFO, "Table Personnes in database is empty.");
+		else
+			logger.log(Level.INFO, personnes.toString() + "\nfound.");
 		return personnes;
+	}
+
+	@Override
+	protected Personne itemBuilder(ResultSet rs) throws SQLException {
+		Personne personne = new Personne();
+		personne.setIdPersonne(rs.getInt("IdPersonne"));
+		personne.setNom(rs.getString("Nom"));
+		personne.setPrenom(rs.getString("Prenom"));
+		return personne;
 	}
 
 }

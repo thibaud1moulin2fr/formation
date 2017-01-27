@@ -1,5 +1,12 @@
 package fr.thibaud.gestionparking.model;
 
+/**
+ * Represente une personne.
+ * 
+ * 
+ * @author Administrateur
+ *
+ */
 public class Personne {
 	private Integer idPersonne;
 	private String nom, prenom;
@@ -9,16 +16,14 @@ public class Personne {
 	}
 
 	public Personne(String nom, String prenom) {
-		super();
+		this();
 		this.nom = nom;
 		this.prenom = prenom;
 	}
 
 	public Personne(Integer idPersonne, String nom, String prenom) {
-		super();
+		this(nom,prenom);
 		this.idPersonne = idPersonne;
-		this.nom = nom;
-		this.prenom = prenom;
 	}
 
 	public String getNom() {
